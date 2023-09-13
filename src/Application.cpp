@@ -29,6 +29,11 @@ int main() {
 		if (converter.to_bytes(procEntry.szExeFile) == processName) {
 			HANDLE processHandle = OpenProcess(PROCESS_TERMINATE, false, procEntry.th32ProcessID);
 			bool processTermination = TerminateProcess(processHandle, 0);
+			if (processTermination == 0) {
+				std::cout << "Runtime error: 2";
+				system("pause");
+				return 2;
+			}
 		}
 
 		while (Process32NextW(snapshotHandle, &procEntry) != false) {
