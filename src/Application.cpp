@@ -8,7 +8,7 @@
 #include <chrono>
 #include <thread>
 
-std::string processName = "Notepad.exe";
+std::string processName = "Lunar Client.exe";
 
 int main() {
 	while (true) {
